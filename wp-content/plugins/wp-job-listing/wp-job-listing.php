@@ -14,11 +14,14 @@ if(! defined('ABSPATH') ){
 	exit;
 }
 
+// Post Default type function for JobListings
 function dwwp_register_post_type(){
 
+	// Variables for Singular UI and Plural UI description terms
 	$singular = 'Job Listing';
 	$plural = 'Job Listings';
 
+	// UI Label Arrays
 	$labels = array(
 		'name' 			     => 	$plural,
 		'singular_name'      => 	$singular,
@@ -36,6 +39,7 @@ function dwwp_register_post_type(){
 
 		);
 
+	// Permissions array for Custom Job Post Type
 	$args = array(
 
 		'labels' 					=> $labels,
@@ -58,12 +62,14 @@ function dwwp_register_post_type(){
          
 		//capabilities => array(),
 
+		// Custom Slug
 		'rewrite' => array(
 			'slug'       => 'jobs',
 			'with_front' => true,
 			'pages' 	 => true,
 			'feeds'       => true
 		),
+
 
 		'supports'  => array(
 			'title',
@@ -73,16 +79,19 @@ function dwwp_register_post_type(){
 		)
 
 	);	
+	// Registering the Custom Post Type
 	register_post_type('job', $args);
 
 }
 
 add_action('init', 'dwwp_register_post_type');
 
+// Custom Taxonomy
 function dwwp_register_taxonomy(){
 	$plural   =  'Locations';
 	$singular =  'Location';
 
+	// UI Label for Custom Taxonomy
 	$labels = array(
 		'name'						=> $plural,
 		'singular_name'				=> $singular,
@@ -101,7 +110,7 @@ function dwwp_register_taxonomy(){
 		'menu_name'					=> $plural
 
 		);
-
+	// Permissions Array
 	$args = array(
 		'heirarchical' 				=> true,
 		'labels'					=> $labels,
@@ -113,11 +122,29 @@ function dwwp_register_taxonomy(){
 
 
 	);
+	// Registering the Taxonomy
 	register_taxonomy('location', 'job', $args);
 }
 
+// Adding the action hook
 add_action('init', 'dwwp_register_taxonomy');
 
+
+
+function wptitle_date_append ( $title ) {
+
+	// The appendage should apply to all posts
+		if ( !is_single() ) {
+			$date =  get_the_date( get_option('date_format'));
+			$title = $title .' ('. $date .')';
+
+		} 
+
+		return $title;
+
+	} 
+// End wptitle_date_append()
+add_filter( 'the_title', 'wptitle_date_append' );
 
 
  ?>

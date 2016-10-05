@@ -1,0 +1,120 @@
+/*
+Theme Name: LearningWordPress
+Author: LearningWebCode
+Author URI: http://youtube.com
+Version: 1.0;
+*/
+
+body{
+	 font-family: Verdana;
+	 font-size: 14px;
+	 color:#333;
+}
+
+a:link, a:visited{
+	color:#006ec3;
+}
+
+/* General layout*/
+div.container{
+	max-width:920px;
+	margin:0 auto;
+}
+.site-footer{
+	margin-top: 30px;
+	border-top: 1px solid #999;
+}
+
+.site-header{
+		border-bottom: 1px solid #999;
+}
+article.post:last-of-type{
+	border-bottom: none;
+}
+article.post{
+	border-bottom: 1px dotted #bbb;
+}
+
+/*Navigation Menu*/
+.site-nav ul{
+	margin:0;
+	padding:0;
+}
+
+.site-nav ul:before, .site-nav ul:after{
+	content: "";
+	display: table
+}
+.site-nav ul:after{
+	clear:both;
+}
+.site-nav ul{
+	*zoom: 1;
+}
+
+.site-nav ul li{
+	list-style: none;
+	float:left;
+	margin-right: 5px;
+}
+
+/* Site Header Menu*/
+.site-header nav ul li a:hover{
+	background-color: #ececec;
+	border:none;
+}
+.site-header nav ul li a:link,
+.site-header nav ul li a:visited{
+	display: block;
+	padding:10px 18px;
+	border: 1px solid #bbb;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.site-header nav ul li.current-menu-item a:link,
+.site-header nav ul li.current-menu-item a:visited{
+	background-color: #006ec3;
+	color:#fff;
+}
+
+/* Footer Menu*/
+.site-footer nav ul li{
+	margin-right: 10px;
+	padding-right:10px;
+	border-right: 1px solid #bbb;
+}
+article.post a{
+	font-size: 100%;
+}
+
+/* Two Column Title Layout*/
+div.title-colunn{
+	width:25%;
+	float:left;
+}
+
+div.text-column{
+	width:70%;
+	float:right;
+	vertical-align: top;
+}
+
+.clearfix{
+	*zoom:1;
+}
+
+/*Post Styles*/
+.post h2{
+	margin-bottom:0;
+}
+
+p.post-info{
+	font-size:87%;
+	color:#999;
+}
+
+p.post-info a:link,
+p.post-info a:visited{
+	color:#999;
+}

@@ -1,0 +1,38 @@
+Task Description
+Place a Widget with a gMap in the sidebar, tell us how you did and what you changed on the running wordpress
+
+Solution:
+
+I Visited Google and Searched for Google Maps. 
+I entered the location I wanted to include and saved it.
+Select the embed option and decide to export it to Wordpress as a link or iframe 
+I downloaded the custom sidebar plugin
+Built a sidebar widget and included the embedded iframe from Google Maps
+
+Task Description
+Change the title display on the portal to show also the post date in brakets by applying a filter, tell us what you did and where, send uns the code
+
+Solution:
+I built a hook function that takes the title as input
+The function checks if we are not displaying an individual post,
+it concatenates the post title with the post for that specific post
+The add filter is used to apply this filter to the title portion of all non-single post pages
+
+The Code sample can be found in the Plugins/wp-job-listing/wp-job-listing.php folder
+
+Task Description
+Choose a plugin to display an image slideshow, install it on the system. Tell us what you did and where and why you have chosen your plugin. Send us a snippet or details how the plugin can be used
+
+Solution:
+I chose the Master Slider Plugin and created a custom Slide.
+I had the option of uploading pictures from my local drive or importing from the existing ones coming from the slider. I chose the latter.
+You could Preview the final output and decide to make it full width and customise several other options 
+A javascript or PHP code snippet was generated which you can include in the portion of the page where you want to include the slide.
+
+[masterslider id="1"]
+
+Save and Refresh your page
+
+
+
+
